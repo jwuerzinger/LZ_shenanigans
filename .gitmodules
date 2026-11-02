@@ -1,0 +1,4 @@
+[submodule "Run3ModelGen"]
+	path = Run3ModelGen
+	url = ssh://git@gitlab.cern.ch:7999/jwuerzin/Run3ModelGen.git
+	branch = osx-arm64
