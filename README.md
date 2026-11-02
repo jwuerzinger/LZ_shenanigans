@@ -12,25 +12,36 @@ Spectra are computed with the [Run3ModelGen](Run3ModelGen) submodule (SPheno, mi
 
 ## Results
 
-**No pMSSM configuration explains LZ and the soft-2L excess together with m_h = 125 GeV.**
+**No pMSSM configuration found explains LZ and the soft-2L excess together, even when m_h = 125 GeV is not required.** Each excess can be explained on its own.
 
 - **LZ needs inelastic scattering, N1 N → N2 N, with m(N2) − m(N1) ≈ 100–250 keV.** Elastic scattering gives 0σ. With TeV gauginos, such a gap only occurs where the two Higgsino-like states cross. They have opposite CP, so they don't mix, and reaching the crossing means tuning one gaugino mass to about 10⁻⁶.
 - **LZ alone works** for a nearly pure Higgsino with gauginos at 1–3.5 TeV and tanβ ≈ 5 (class F). Crossings with more gaugino mixing (B, C, E) are excluded by LZ's own elastic limit.
-- **LZ + soft-2L** needs a third neutralino 10–20 GeV above the pair. That only happens at tanβ ≲ 1.3 with the wino near μ (class A), where m_h ≈ 102 GeV. Even then the soft-2L fit barely improves, because N3 decays mostly to C1 W* and N2 γ.
+- **LZ + soft-2L** needs a third neutralino 10–20 GeV above the pair. That only happens at tanβ ≲ 1.3 with the wino near μ (class A), where m_h ≈ 102 GeV. Setting m_h aside, class A still doesn't fit the soft-2L excess (see [below](#joint-lz--soft-2l-ignoring-m_h)):
+  - without light sleptons the signal is 2–6× too small;
+  - with left-handed sleptons just above N1 the rate is roughly right, but no available recast shows an improved fit, and the best such point fails LZ's elastic limit.
 - **Soft-2L alone:** a compressed wino/bino at 200 GeV (D2) gives Δχ² = −4.0. The best fit wants 2.5× more signal, which is in tension with CMS-SUS-21-008 (r = 0.98).
 - **Sleptons:** light right-handed sleptons can be added to class F without breaking anything. In pMSSM-19, though, ẽ and μ̃ are degenerate, while ATLAS saw each excess in one flavour only. The slepton search isn't in SModelS, so this match is kinematic only.
 
+![Benchmarks: LZ elastic limit vs soft-2L fit](scan/results/summary_benchmarks.png)
+
+*Each benchmark's elastic scattering relative to the LZ 2024 limit (x) against its soft-2L fit (y). Explaining both would put a point in the lower-left corner, and none gets there. Hollow markers fail m_h.*
+
 ![Smallest N3−N1 gap vs tanβ](scan/results/gap_vs_tanb.png)
+
+*Tree level: a third neutralino 10–20 GeV above the keV-split pair, as soft-2L needs, only occurs at tanβ ≲ 1.3.*
 
 | Configuration | LZ | soft-2L | smuon | selectron | m_h = 125 |
 |---|---|---|---|---|---|
 | **A** wino–Higgsino crossing, tanβ ≈ 1.2 | ✓ | ≈0 | ✓ | – | ✗ (~102) |
+| **A + ℓ̃_L** class A with left-handed sleptons 5–8 GeV above N1 (m_h ignored) | ✗ elastic SI* | rate ✓, fit ? | ✓ | – | ✗ |
 | **B/C/E** Higgsino crossing with gaugino mixing, tanβ ≈ 10 | ✗ elastic SI | – | ✓ | ✓ (E) | ✓ |
 | **F** nearly pure Higgsino crossing, TeV gauginos, tanβ ≈ 5 | ✓ | – | ✓ | ✓ (F3) | ✓ |
 | **D1** compressed Higgsino, Δm = 15 GeV | – | – | ✗ | – | ✓ |
 | **D2** compressed wino/bino, Δm = 15 GeV | – | ✓ (CMS tension) | ✓ | – | ✓ |
 
-✓ fits or allowed · ≈0 signal predicted but no improvement · – no relevant signal · ✗ excluded
+✓ fits or allowed · ≈0 signal predicted but no improvement · – no relevant signal · ✗ excluded · ? cannot be decided with the available recast
+
+\* For the best point found. The elastic cross section varies across class A (benchmark A sits at 0.8× the limit), so elastic-safe points with sleptons may exist; this hasn't been searched yet.
 
 ### Benchmarks
 
@@ -58,6 +69,43 @@ Masses are in GeV. Column definitions:
 - **SI/limit:** elastic SI × Ωh²/0.12 divided by the LZ 2024 limit, approximated as 2.2 × 10⁻⁴⁸ cm² × m/40 GeV.
 - **2ℓ Δχ²:** −2 ln(L/L_SM) in the combined SUSY-2018-16 fit.
 - **r_max:** the largest SModelS r.
+
+## Joint LZ + soft-2L, ignoring m_h
+
+A dedicated search of class A (tanβ = 1.0–1.4, wino within 60 GeV of μ, M₂·μ < 0) without the m_h requirement. Every point is tuned at loop level to the LZ crossing (N2 − N1 = 20–210 keV) and fitted against SUSY-2018-16.
+
+| Step | Points | Result |
+|---|---|---|
+| Class A, no light sleptons ([`joint_loop.py`](scan/joint_loop.py)) | 66 (N1 = 120–420 GeV) | Signal 2–6× too small; best Δχ² = −0.85 |
+| + left-handed sleptons 5 or 8 GeV above N1 ([`joint_sleptons.py`](scan/joint_sleptons.py)) | 13 of 18 (5 had a sneutrino LSP) | BR(N3 → ℓ̃ ℓ) ≈ 25–35%. Signal in the Higgsino regions rises 5–15×. At N1 ≈ 220 GeV the best-fit strength is μ̂ ≈ 0.6–1.05, but Δχ² ≥ −0.7. At N1 ≈ 140–160 GeV it overshoots (Δχ² up to +19) |
+| Exclusive m_ℓℓ bins, proxy recast ([`proxy_ewk.py`](scan/proxy_ewk.py)) | 7 | 1–4 events; Δχ² −0.1 to −1.4 |
+
+![Class A: soft-2L signal strength vs m(N1)](scan/results/joint_search.png)
+
+*Best-fit signal strength in the Higgsino regions: μ̂ = 1 means the predicted rate is what the data prefer. Without light sleptons, class A is 2–6× short. With them it reaches μ̂ ≈ 1 at m(N1) ≈ 220 GeV and overshoots below 160 GeV.*
+
+![Light spectra of key benchmarks](scan/results/spectra.png)
+
+Why this stays inconclusive:
+
+- **The Higgsino regions are coarse.** `ATLAS-SUSY-2018-16-hino` has four inclusive regions. Only SR-E-med is high (170 vs 112 ± 13), and this signal spreads over all four, so Δχ² ≈ −0.7 is about the most any such point can gain there.
+- **The sharp exclusive bins aren't covered.** These are μμ at m_ℓℓ 10–20 GeV and ee at 5–10 GeV, both at high E_T^miss. With C1 only 2–4 GeV above N1, SModelS treats C1 as invisible and never matches the wino/bino efficiency maps.
+- **The proxy is unreliable.** It moves C1 up to m(N3) so the maps apply. It predicts about 10× less signal than the Higgsino maps for the same spectra, so neither number should be trusted.
+- **The best point fails LZ's elastic limit.**
+
+Best point (`c027` + ℓ̃_L at +5 GeV):
+
+| N1 | N2−N1 | N3−N1 | C1−N1 | ℓ̃_L / ν̃ | Ωh² | σ_SI × Ωh²/0.12 |
+|---|---|---|---|---|---|---|
+| 222 GeV | 150 keV | 11 GeV | 2.4 GeV | 227 / 225 GeV | 0.005 | 3 × 10⁻⁴⁶ cm² (≈ 25× the LZ limit) |
+
+Its spin-dependent cross section is also large (about 10⁻³⁹ cm² before relic scaling).
+
+**Next steps:**
+1. Select class-A points with a small Higgs coupling to N1, the same suppression that makes class F elastic-safe, and rerun the slepton cascade.
+2. Run a proper SUSY-2018-16 recast (event generation plus CheckMATE or the MadAnalysis public analysis database) to test the exclusive m_ℓℓ bins.
+
+Outputs are in [`scan/results/`](scan/results) (`joint_*.csv`).
 
 ## The excesses in brief
 
@@ -110,5 +158,7 @@ cd LZ_shenanigans/Run3ModelGen && pixi install && pixi run build
 cd ../scan && ../Run3ModelGen/.pixi/envs/default/bin/python treelevel_scan.py 200000 && ../Run3ModelGen/.pixi/envs/default/bin/python plot_treelevel.py
 cd ../Run3ModelGen
 pixi run bash -c '. build/setup.sh && python ../scan/benchmarks.py && python ../scan/soft2l_fit.py ../benchmarks/*.slha'
-cd ../scan && ../Run3ModelGen/.pixi/envs/default/bin/python summarize.py
+# joint LZ + soft-2L search (m_h ignored); candidates from scan/joint_candidates.py
+pixi run bash -c '. build/setup.sh && python ../scan/joint_loop.py 6 && python ../scan/joint_sleptons.py joint_loop.csv c027 c023 c028'
+cd ../scan && ../Run3ModelGen/.pixi/envs/default/bin/python summarize.py && ../Run3ModelGen/.pixi/envs/default/bin/python plot_summary.py
 ```

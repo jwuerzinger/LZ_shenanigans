@@ -79,9 +79,10 @@ def scan(mode):
     return rows
 
 
-rows = scan('M1') + scan('M2')
-df = pd.DataFrame(rows)
-df['LZ'] = (df.mN1 >= 100) & (df.O12 >= 0.1)
-df['soft2L'] = (df.dm_2L >= 10) & (df.dm_2L <= 20) & (df.Z_2L >= 0.1) & (df.mN1 <= 300)
-df.to_csv(OUT, index=False)
-print(f"{len(df)} crossings; LZ-capable: {df.LZ.sum()}; LZ+soft2L: {(df.LZ & df.soft2L).sum()}")
+if __name__ == '__main__':
+    rows = scan('M1') + scan('M2')
+    df = pd.DataFrame(rows)
+    df['LZ'] = (df.mN1 >= 100) & (df.O12 >= 0.1)
+    df['soft2L'] = (df.dm_2L >= 10) & (df.dm_2L <= 20) & (df.Z_2L >= 0.1) & (df.mN1 <= 300)
+    df.to_csv(OUT, index=False)
+    print(f"{len(df)} crossings; LZ-capable: {df.LZ.sum()}; LZ+soft2L: {(df.LZ & df.soft2L).sum()}")
