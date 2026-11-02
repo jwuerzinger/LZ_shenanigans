@@ -1,0 +1,564 @@
+{
+ "name": "B_light_higgsino_crossing_smuons",
+ "mh_best": 124.976852,
+ "delta_target_keV": 101.57165484094006,
+ "inputs": {
+  "tanb": 10.214,
+  "M_1": 205.871,
+  "M_2": -241.01368501104872,
+  "mu": 164.797,
+  "mqL3": 4000,
+  "mtR": 4000,
+  "mbR": 4000,
+  "mA": 1000,
+  "mtauL": 2000,
+  "mtauR": 4500,
+  "AT": -4983.865576659487,
+  "meR": 42.04972461324732
+ },
+ "mh": 124.973807,
+ "mN": [
+  164.452318,
+  164.452418,
+  233.187235,
+  295.171894
+ ],
+ "mC": [
+  169.483374,
+  296.554699
+ ],
+ "dm_N2N1_keV": 100.00000000331966,
+ "dm_N3N1": 68.734917,
+ "dm_C1N1": 5.031056000000007,
+ "m_smuR": 170.415837,
+ "m_smuL": 3004.35406,
+ "m_selR": 170.441325,
+ "m_selL": 3004.3553,
+ "vmin_248keV_kms": 648.0869347431822,
+ "N1_composition": {
+  "bino": 0.0039067124011833414,
+  "wino": 0.1773864457523262,
+  "higgsino": 0.8187068417218448
+ },
+ "Z_N1N2_rel_pure_higgsino": 0.6754795977662937,
+ "decays": {
+  "1000023": [
+   [
+    0.9989,
+    [
+     1000022,
+     22
+    ]
+   ],
+   [
+    0.0011,
+    [
+     1000022,
+     12,
+     -12
+    ]
+   ]
+  ],
+  "1000025": [
+   [
+    0.2488,
+    [
+     2000013,
+     -13
+    ]
+   ],
+   [
+    0.2488,
+    [
+     -2000013,
+     13
+    ]
+   ],
+   [
+    0.2486,
+    [
+     2000011,
+     -11
+    ]
+   ],
+   [
+    0.2486,
+    [
+     -2000011,
+     11
+    ]
+   ]
+  ],
+  "1000024": [
+   [
+    0.2879,
+    [
+     1000022,
+     -1,
+     2
+    ]
+   ],
+   [
+    0.2118,
+    [
+     1000022,
+     -3,
+     4
+    ]
+   ],
+   [
+    0.0988,
+    [
+     1000023,
+     -1,
+     2
+    ]
+   ],
+   [
+    0.096,
+    [
+     1000022,
+     -11,
+     12
+    ]
+   ]
+  ],
+  "2000013": [
+   [
+    0.9909,
+    [
+     1000023,
+     13
+    ]
+   ],
+   [
+    0.0091,
+    [
+     1000022,
+     13
+    ]
+   ]
+  ],
+  "1000013": [
+   [
+    0.5377,
+    [
+     -1000037,
+     14
+    ]
+   ],
+   [
+    0.2314,
+    [
+     1000035,
+     13
+    ]
+   ],
+   [
+    0.0697,
+    [
+     1000023,
+     13
+    ]
+   ],
+   [
+    0.0634,
+    [
+     1000022,
+     13
+    ]
+   ]
+  ]
+ },
+ "micromegas": {
+  "cdm_is_neutralino": 1.0,
+  "cdm_mass": 164.0,
+  "deltarho": 7.08e-07,
+  "gmuon": -5.66e-10,
+  "bsgnlo": 0.000355,
+  "bsmumu": 3.04e-09,
+  "btaunu": 0.994,
+  "Rl23": 1.0,
+  "Xf": 28.6,
+  "Omega": 0.00527,
+  "proton_SI": 8.33e-09,
+  "proton_SD": 0.000625,
+  "neutron_SI": 8.41e-09,
+  "neutron_SD": 0.000478
+ },
+ "smodels": [
+  {
+   "id": "CMS-SUS-23-003",
+   "sr": null,
+   "txnames": [
+    "TChiWWoff"
+   ],
+   "r": 0.6052125,
+   "r_exp": 0.8683873
+  },
+  {
+   "id": "ATLAS-SUSY-2018-16",
+   "sr": null,
+   "txnames": [
+    "TSlepSlep"
+   ],
+   "r": 0.288967,
+   "r_exp": 0.2834464
+  },
+  {
+   "id": "ATLAS-SUSY-2018-16",
+   "sr": "SR_slep_2l_mm_high_d",
+   "txnames": [
+    "TSlepSlep"
+   ],
+   "r": 0.2515727,
+   "r_exp": 0.2014479,
+   "dchi2_vs_SM": 0.7525899999999996
+  },
+  {
+   "id": "ATLAS-EXOT-2018-06",
+   "sr": "EM9",
+   "txnames": [
+    "TChiZISRqq",
+    "TChiISR",
+    "TChiWISRll",
+    "TChiWWISRqq"
+   ],
+   "r": 0.2327995,
+   "r_exp": 0.2058336,
+   "dchi2_vs_SM": 0.5069359999999996
+  },
+  {
+   "id": "CMS-SUS-23-003",
+   "sr": null,
+   "txnames": [
+    "TSlepSlep"
+   ],
+   "r": 0.2029516,
+   "r_exp": 0.3240079
+  },
+  {
+   "id": "CMS-SUS-21-008",
+   "sr": null,
+   "txnames": [
+    "TSlepSlep"
+   ],
+   "r": 0.1805297,
+   "r_exp": 0.2610813
+  },
+  {
+   "id": "CMS-SUS-21-008",
+   "sr": null,
+   "txnames": [
+    "TChiWZ"
+   ],
+   "r": 0.1540282,
+   "r_exp": 0.204954
+  },
+  {
+   "id": "ATLAS-SUSY-2019-09",
+   "sr": null,
+   "txnames": [
+    "TChiWZ"
+   ],
+   "r": 0.1246067,
+   "r_exp": 0.1050173
+  },
+  {
+   "id": "ATLAS-SUSY-2019-09",
+   "sr": "SRWZ_5",
+   "txnames": [
+    "TChiWZ"
+   ],
+   "r": 0.1231137,
+   "r_exp": 0.07717577,
+   "dchi2_vs_SM": 0.4869559999999993
+  },
+  {
+   "id": "ATLAS-SUSY-2018-32",
+   "sr": "SRDF_0d_cuts",
+   "txnames": [
+    "TChiWW"
+   ],
+   "r": 0.08535867,
+   "r_exp": 0.05435271,
+   "dchi2_vs_SM": 0.28967600000000004
+  },
+  {
+   "id": "CMS-SUS-17-004",
+   "sr": null,
+   "txnames": [
+    "TChiWZ"
+   ],
+   "r": 0.06962798,
+   "r_exp": null
+  },
+  {
+   "id": "ATLAS-SUSY-2018-06",
+   "sr": "SR_low",
+   "txnames": [
+    "TChiWZ"
+   ],
+   "r": 0.06001933,
+   "r_exp": 0.06665135,
+   "dchi2_vs_SM": -0.15733400000000053
+  },
+  {
+   "id": "CMS-SUS-16-039",
+   "sr": null,
+   "txnames": [
+    "TChiWZ"
+   ],
+   "r": 0.05676968,
+   "r_exp": null
+  },
+  {
+   "id": "ATLAS-SUSY-2016-24",
+   "sr": "WZ-0Jb",
+   "txnames": [
+    "TChiWZ"
+   ],
+   "r": 0.0465787,
+   "r_exp": 0.03756347,
+   "dchi2_vs_SM": 0.20834800000000042
+  },
+  {
+   "id": "ATLAS-SUSY-2018-05-ewk",
+   "sr": "SRInt_1_cuts",
+   "txnames": [
+    "TChiWZ"
+   ],
+   "r": 0.04456163,
+   "r_exp": 0.05165866,
+   "dchi2_vs_SM": -0.03229599999999877
+  },
+  {
+   "id": "ATLAS-SUSY-2018-06",
+   "sr": null,
+   "txnames": [
+    "TChiWZ"
+   ],
+   "r": 0.04408093,
+   "r_exp": 0.06881332
+  },
+  {
+   "id": "CMS-EXO-20-004",
+   "sr": "SR_2018_13",
+   "txnames": [
+    "TChiZISRqq",
+    "TChiISR",
+    "TChiWISRll",
+    "TChiWWISRqq"
+   ],
+   "r": 0.03966256,
+   "r_exp": 0.05334913,
+   "dchi2_vs_SM": -0.3985859999999981
+  },
+  {
+   "id": "CMS-SUS-16-039-agg",
+   "sr": "AR1",
+   "txnames": [
+    "TChiWZ"
+   ],
+   "r": 0.0380264,
+   "r_exp": 0.03895944,
+   "dchi2_vs_SM": -0.0013540000000009655
+  },
+  {
+   "id": "CMS-SUS-23-003",
+   "sr": null,
+   "txnames": [
+    "TChiWW"
+   ],
+   "r": 0.03590366,
+   "r_exp": 0.07523425
+  },
+  {
+   "id": "ATLAS-SUSY-2018-16-hino",
+   "sr": "SR_ewk_2l_high",
+   "txnames": [
+    "TChiWWoff"
+   ],
+   "r": 0.03580291,
+   "r_exp": 0.03391032,
+   "dchi2_vs_SM": 0.03171200000000063
+  },
+  {
+   "id": "ATLAS-SUSY-2018-32",
+   "sr": null,
+   "txnames": [
+    "TChiWW"
+   ],
+   "r": 0.03417458,
+   "r_exp": null
+  },
+  {
+   "id": "CMS-SUS-21-002",
+   "sr": "b_veto_SR0",
+   "txnames": [
+    "TChiWW",
+    "TChiWZ",
+    "TChiWH"
+   ],
+   "r": 0.02824768,
+   "r_exp": 0.02296037,
+   "dchi2_vs_SM": 0.04597200000000079
+  },
+  {
+   "id": "CMS-SUS-20-001",
+   "sr": null,
+   "txnames": [
+    "TChiWZ"
+   ],
+   "r": 0.02695921,
+   "r_exp": 0.0262418
+  },
+  {
+   "id": "CMS-SUS-23-003",
+   "sr": null,
+   "txnames": [
+    "TChiWZ"
+   ],
+   "r": 0.02501238,
+   "r_exp": 0.03899574
+  },
+  {
+   "id": "ATLAS-SUSY-2018-05",
+   "sr": null,
+   "txnames": [
+    "TChiWZ"
+   ],
+   "r": 0.02354887,
+   "r_exp": null
+  },
+  {
+   "id": "CMS-SUS-21-002",
+   "sr": null,
+   "txnames": [
+    "TChiWW"
+   ],
+   "r": 0.01812396,
+   "r_exp": 0.01598395
+  },
+  {
+   "id": "CMS-SUS-16-034",
+   "sr": null,
+   "txnames": [
+    "TChiWZ"
+   ],
+   "r": 0.01652678,
+   "r_exp": null
+  },
+  {
+   "id": "ATLAS-SUSY-2017-03",
+   "sr": "SR3l_Low",
+   "txnames": [
+    "TChiWZ"
+   ],
+   "r": 0.01523811,
+   "r_exp": 0.0310623,
+   "dchi2_vs_SM": -0.34761800000000065
+  },
+  {
+   "id": "ATLAS-SUSY-2016-24",
+   "sr": null,
+   "txnames": [
+    "TChiWZ"
+   ],
+   "r": 0.0092622,
+   "r_exp": null
+  },
+  {
+   "id": "ATLAS-SUSY-2018-23",
+   "sr": null,
+   "txnames": [
+    "TChiWH"
+   ],
+   "r": 0.006743413,
+   "r_exp": 0.008102375
+  },
+  {
+   "id": "CMS-SUS-21-008",
+   "sr": null,
+   "txnames": [
+    "TChiWH"
+   ],
+   "r": 0.006381003,
+   "r_exp": 0.006673186
+  },
+  {
+   "id": "CMS-SUS-17-004",
+   "sr": null,
+   "txnames": [
+    "TChiWH"
+   ],
+   "r": 0.00450599,
+   "r_exp": null
+  },
+  {
+   "id": "CMS-SUS-18-007",
+   "sr": null,
+   "txnames": [
+    "TChiWH"
+   ],
+   "r": 0.003840837,
+   "r_exp": null
+  },
+  {
+   "id": "ATLAS-SUSY-2017-03",
+   "sr": null,
+   "txnames": [
+    "TChiWZ"
+   ],
+   "r": 0.003471408,
+   "r_exp": null
+  },
+  {
+   "id": "CMS-SUS-16-039",
+   "sr": null,
+   "txnames": [
+    "TChiWH"
+   ],
+   "r": 0.003339086,
+   "r_exp": null
+  },
+  {
+   "id": "ATLAS-SUSY-2019-08",
+   "sr": "SR_LM_High_MCT",
+   "txnames": [
+    "TChiWHqq"
+   ],
+   "r": 0.002945797,
+   "r_exp": 0.002853543,
+   "dchi2_vs_SM": 0.0013259999999997163
+  },
+  {
+   "id": "CMS-SUS-16-045",
+   "sr": null,
+   "txnames": [
+    "TChiWH"
+   ],
+   "r": 0.002693956,
+   "r_exp": null
+  },
+  {
+   "id": "CMS-SUS-21-002",
+   "sr": null,
+   "txnames": [
+    "TChiWH"
+   ],
+   "r": 0.002004582,
+   "r_exp": 0.001823172
+  },
+  {
+   "id": "ATLAS-SUSY-2016-07",
+   "sr": "6j_Meff_1200",
+   "txnames": [
+    "T1"
+   ],
+   "r": 0.001536109,
+   "r_exp": 0.00157979,
+   "dchi2_vs_SM": -0.00035799999999852616
+  }
+ ]
+}

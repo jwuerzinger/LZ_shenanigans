@@ -1,0 +1,6 @@
+# full tree-level scan output (129 MB); regenerate with scan/treelevel_scan.py
+scan/results/treelevel_crossings.csv
+# per-benchmark scratch (SPheno/micrOMEGAs/SModelS runs)
+scan/work/
+run/
+__pycache__/
